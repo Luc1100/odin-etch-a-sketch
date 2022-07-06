@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -12,5 +13,15 @@ body {
     height: 75vh;
 
     border: 4px solid black;
+}
+
+.pixel {
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.slide-container {
+    display: flex;
+    
 }
 

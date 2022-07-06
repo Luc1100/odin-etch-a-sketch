@@ -1,19 +1,38 @@
-const container = document.querySelector('.container')
 
-for (let i = 0; i < 16 * 16; i++) {
-    const pixel = document.createElement('div');
-    const percent = 1/16*100;
-    pixel.classList.add('pixel');
-    pixel.style.flex = `0 0 ${percent}%`;
-    pixel.style.height = `${percent}%`;
-    container.append(pixel);
+function setupContainer(size) {
+    const container = document.querySelector('.container')
+
+    for (let i = 0; i < size * size; i++) {
+        const pixel = document.createElement('div');
+        const percent = 1/size*100;
+        pixel.classList.add('pixel');
+        pixel.style.flex = `0 0 ${percent}%`;
+        pixel.style.height = `${percent}%`;
+        container.append(pixel);
+    }
+
+    const pixels = document.querySelectorAll('.pixel');
+
+    pixels.forEach(pixel => {
+        pixel.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = 'black';
+        });
+    });
 }
 
-let pixels = document.querySelectorAll('.pixel');
+function clearContainer() {
+    const container = document.querySelector('.container');
+    container.innerHTML = '';
+}
 
-pixels.forEach(pixel => {
-    pixel.addEventListener('mouseover', function(e) {
-        console.log(e.target.style.backgroundColor = 'black');
-    });
-});
+setupContainer(16);
+
+const pixelSlider = document.querySelector('.pixel-slider');
+const slideValue = document.querySelector('.slide-value');
+
+pixelSlider.oninput = () => {
+    slideValue.innerText = pixelSlider.value;
+    clearContainer()
+    setupContainer(pixelSlider.value);
+}
 
