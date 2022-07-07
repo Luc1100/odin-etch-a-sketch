@@ -60,6 +60,7 @@ pixelSlider.oninput = () => {
     setupContainer(pixelSlider.value);
 }
 
+// Color buttons
 const redBtn = document.querySelector('.red');
 redBtn.addEventListener('click', (e) => {
     currColor = '#FF6663';
@@ -95,6 +96,13 @@ blackBtn.addEventListener('click', (e) => {
     currColor = 'black';
     selectColor(e.target);
 });
+
+// Reset button
+const resetBtn = document.querySelector('.reset');
+resetBtn.addEventListener('click', () => {
+    clearContainer();
+    setupContainer(pixelSlider.value);
+})
 
 let currColor = 'black';
 setupContainer(16);

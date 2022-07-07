@@ -1,11 +1,22 @@
 body {
     display: flex;
-    flex-direction: row;
-    gap: 32px;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: sans-serif;
+}
+
+h1 {
+}
+
+.content {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -29,10 +40,10 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    max-width: 20vh;
 }
 
 .slide-container {
-    font-family: sans-serif;
     display: flex;
     gap: 16px;
 }
@@ -72,4 +83,8 @@ body {
 
 .black {
     background-color: black;
+}
+
+.reset {
+    background-color: white;
 }
