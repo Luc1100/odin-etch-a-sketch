@@ -35,6 +35,7 @@ function setupContainer(size) {
 function clearContainer() {
     const container = document.querySelector('.container');
     container.innerHTML = '';
+    currDraw = false;
 }
 
 function selectColor(target) {
