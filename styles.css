@@ -53,7 +53,7 @@ body {
 }
 
 .selected {
-    scale: 1.05;
+    -webkit-transform: scale(1.05);
 }
 
 .red {
