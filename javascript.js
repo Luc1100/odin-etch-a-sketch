@@ -8,6 +8,7 @@ function setupContainer(size) {
         pixel.classList.add('pixel');
         pixel.style.flex = `0 0 ${percent}%`;
         pixel.style.height = `${percent}%`;
+        pixel.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         container.append(pixel);
     }
 
@@ -15,10 +16,25 @@ function setupContainer(size) {
 
     pixels.forEach(pixel => {
         pixel.addEventListener('mouseover', (e) => {
-            e.target.style.backgroundColor = 'black';
+            addAlpha(e.target);
         });
     });
 }
+
+function addAlpha(target) {
+    let currentBGC = target.style.backgroundColor;
+    currentBGC = currentBGC.split(", ");
+    console.log(currentBGC);
+
+    let alpha = currentBGC[currentBGC.length - 1];
+    alpha = parseFloat(alpha.substring(0, [alpha.length - 1]));
+    
+    let newAlpha = alpha + 0.10;
+
+    if (newAlpha < 1) {
+        target.style.backgroundColor = `rgba(0, 0, 0, ${newAlpha})`;
+    }
+} 
 
 function clearContainer() {
     const container = document.querySelector('.container');
