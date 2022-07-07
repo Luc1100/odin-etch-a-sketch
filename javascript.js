@@ -1,4 +1,7 @@
 
+let currDraw = false;
+let currColor = 'black';
+
 function setupContainer(size) {
     const container = document.querySelector('.container')
 
@@ -15,9 +18,16 @@ function setupContainer(size) {
     const pixels = document.querySelectorAll('.pixel');
 
     pixels.forEach(pixel => {
+        pixel.addEventListener('click', () => {
+            currDraw = !currDraw;
+            console.log(currDraw);
+            console.log('!');
+        });
         pixel.addEventListener('mouseover', (e) => {
-            e.target.style.backgroundColor = currColor;
-            e.target.style.borderColor = currColor;
+            if (currDraw) {
+                e.target.style.backgroundColor = currColor;
+                e.target.style.borderColor = currColor;
+            }
         });
     });
 }
@@ -102,7 +112,6 @@ const resetBtn = document.querySelector('.reset');
 resetBtn.addEventListener('click', () => {
     clearContainer();
     setupContainer(pixelSlider.value);
-})
+});
 
-let currColor = 'black';
 setupContainer(16);

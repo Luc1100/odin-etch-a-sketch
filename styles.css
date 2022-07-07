@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
 body {
     display: flex;
     flex-direction: column;
@@ -5,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: sans-serif;
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 h1 {
