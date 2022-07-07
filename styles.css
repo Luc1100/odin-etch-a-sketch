@@ -23,9 +23,49 @@ body {
     border: 1px solid black;
 }
 
-.slide-container {
-    
+.tools {
     display: flex;
-    gap: 32px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
+.slide-container {
+    font-family: sans-serif;
+    display: flex;
+    gap: 16px;
+}
+
+.btn {
+    width: 100%;
+    height: 48px;
+}
+
+.red {
+    background-color: #FF6663;
+}
+
+.orange {
+    background-color: #FEB144;
+}
+
+.yellow {
+    background-color: #FDFD97;
+}
+
+.green {
+    background-color: #9EE09E;
+}
+
+.blue {
+    background-color: #9EC1CF;
+}
+
+.purple {
+    background-color: #CC99C9;
+}
+
+.black {
+    background-color: black;
+}

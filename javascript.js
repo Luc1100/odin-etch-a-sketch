@@ -1,4 +1,6 @@
 
+let currColor = 'black';
+
 function setupContainer(size) {
     const container = document.querySelector('.container')
 
@@ -16,7 +18,12 @@ function setupContainer(size) {
 
     pixels.forEach(pixel => {
         pixel.addEventListener('mouseover', (e) => {
-            addAlpha(e.target);
+            let transparency = false;
+            if (transparency) {
+                addAlpha(e.target);
+            } else {
+                e.target.style.backgroundColor = currColor;
+            }
         });
     });
 }
@@ -52,3 +59,31 @@ pixelSlider.oninput = () => {
     setupContainer(pixelSlider.value);
 }
 
+const redBtn = document.querySelector('.red');
+redBtn.addEventListener('click', () => {
+    currColor = '#FF6663';
+});
+const orangeBtn = document.querySelector('.orange');
+orangeBtn.addEventListener('click', () => {
+    currColor = '#FEB144';
+});
+const yellowBtn = document.querySelector('.yellow');
+yellowBtn.addEventListener('click', () => {
+    currColor = '#FDFD97';
+});
+const greenBtn = document.querySelector('.green');
+greenBtn.addEventListener('click', () => {
+    currColor = '#9EE09E';
+});
+const blueBtn = document.querySelector('.blue');
+blueBtn.addEventListener('click', () => {
+    currColor = '#9EC1CF';
+});
+const purpleBtn = document.querySelector('.purple');
+purpleBtn.addEventListener('click', () => {
+    currColor = '#CC99C9';
+});
+const blackBtn = document.querySelector('.black');
+blackBtn.addEventListener('click', () => {
+    currColor = 'black';
+});
